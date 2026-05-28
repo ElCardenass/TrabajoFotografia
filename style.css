@@ -13,6 +13,13 @@ body {
     scroll-behavior: smooth;
 }
 
+/* Asegurar que las imágenes sean responsivas por defecto */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 /* Navbar */
 .navbar {
     position: fixed;
@@ -171,7 +178,7 @@ body {
 
 .photo-placeholder {
     height: 320px;
-    background: #1b212c;
+    background: transparent; /* <-- Cambia #1b212c por transparent */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -182,20 +189,17 @@ body {
     position: relative;
 }
 
-.photo-placeholder::before {
-    content: "📷";
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-    display: block;
-    text-align: center;
-    opacity: 0.4;
+/* Hace que la imagen tome todo el tamaño de su contenedor */
+.photo-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* <-- ESTA ES LA CLAVE AHORA */
+    object-position: center; /* Centra la foto para que el recorte sea parejo */
 }
 
-.photo-placeholder p {
-    position: absolute;
-    bottom: 20px;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
+/* Excepción para la imagen grande (Atardecer Santa Marta) */
+.large-placeholder img {
+    object-fit: contain; /* 'contain' muestra la foto completa sin recortar nada, ideal para fotos principales */
 }
 
 .large-placeholder {
