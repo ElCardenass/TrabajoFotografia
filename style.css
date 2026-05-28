@@ -382,3 +382,84 @@ body {
         display: none; /* simple hidden nav for mobile preview layout */
     }
 }
+
+/* --- ESTILOS PARA LA SECCIÓN DE CRÉDITOS (PÁGINA 21) --- */
+
+/* Contenedor principal que divide en dos columnas */
+.credits-layout {
+    display: flex;
+    align-items: center; /* Centra ambos elementos verticalmente */
+    justify-content: center;
+    gap: 50px; /* Espacio entre la foto y el texto */
+    max-width: 1000px;
+    margin: 40px auto 0;
+}
+
+/* Estilo de la foto */
+.credits-photo img {
+    width: 350px; /* Ajusta el tamaño de la foto según prefieras */
+    height: auto;
+    border: 3px solid #111; /* Pequeño borde oscuro como en tu imagen */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8); /* Sombra para darle profundidad */
+}
+
+/* Contenedor de los textos */
+.credits-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left; /* Alinea el texto a la izquierda, pegado a la foto */
+}
+
+/* Efecto de resplandor blanco (Glow) como en la imagen de referencia */
+.glow-text {
+    color: #fff;
+    font-style: italic; /* Por la tipografía que se ve en tu imagen */
+    text-shadow: 
+        0 0 5px rgba(255, 255, 255, 0.8),
+        0 0 10px rgba(255, 255, 255, 0.6),
+        0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+.credits-name {
+    font-size: 3rem;
+    line-height: 1.1;
+    margin: 0;
+}
+
+.id-number {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin: 0 0 15px 0;
+}
+
+.group-tag {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.footer-note {
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+/* Ajuste Responsivo para celulares: pone la foto arriba y el texto abajo */
+@media (max-width: 768px) {
+    .credits-layout {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .credits-text {
+        text-align: center;
+        align-items: center;
+    }
+    
+    .credits-photo img {
+        width: 100%;
+        max-width: 300px;
+    }
+}
